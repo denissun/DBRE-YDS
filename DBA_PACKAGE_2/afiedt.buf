@@ -1,0 +1,3 @@
+select 'alter index hbowner.' || segment_name || ' rebuild tablepsace reorg online;' 
+from dba_segments where tablespace_name='HB_INDX' and segment_type='INDEX' order by bytes 
+/
