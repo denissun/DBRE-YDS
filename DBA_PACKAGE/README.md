@@ -1,4 +1,5 @@
 DBA Packages
+============
 
 Author : Yu (Denis) Sun
 
@@ -18,6 +19,7 @@ DD-MON-YYYY    Who      What
 ```
 
 DBA Packages V1.3 code
+======================
 
 # Purpose
 
@@ -26,7 +28,7 @@ and some procedures are created to meet the security requirements for the onshor
 support model by the company. There are restrictions for DBAs to logon to the database servers.
 The packages allow DBA to perform certain DBA tasks without logon to the databases servers.
 
-## Summary of packages developed:
+# Summary of packages developed:
 
 ADMIN - Perform DBA common administration tasks
 
@@ -38,7 +40,7 @@ PROACTIVE - Monitor database for potenital problems
 
 HISTORY - Manage Health check historical data for trend analysis and troubleshooting
 
-## Installation
+# Installation
 
 Before installing the packages, some supporting objects have to be created and database enironment
 needs to be configured in order to compile those packages sucessfully. 
@@ -58,9 +60,10 @@ Create ALERTS, CONFIGS and HC_HISTORY tables.
 
 Initially, configs table should at least contain the following four entries in order to enable email functionality
 
--- change server name as needed
 
 ```
+
+-- change server name as needed
 
 insert into configs values ('SENDER', 'oracle@host.mycompany.com');
 insert into configs values ('RECIP', 'dbateam@mycompany.com');
@@ -82,21 +85,29 @@ DBAETS is an web application with an Oracle database called etsdb at backend. It
 
 Add the following entry in the local tnsnames.ora. (for RAC, add it at each node)
 
+```
+
 etsdb =
  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=xxx.xxx.xxx.xxx)(PORT=1521)) ( connect_data= (SID = etsdb)))
+```
 
 Create a database link
 
+```
 SQL> create database link etsdb connect to dbaets identified by &psswd using 'etsdb';
 
 Database link created.
+```
 
 Create a synonym for a remote procedure
 
+```
 SQL> create synonym dbaets_load for  proc_event_load@etsdb;
 
 Synonym created.
 
+```
+```
 SQL> desc dbaets_load
 
 PROCEDURE dbaets_load
@@ -109,10 +120,13 @@ PROCEDURE dbaets_load
  P_CREATED_BY                   VARCHAR2                IN     DEFAULT
  P_START_TIME                   DATE                    IN
 
+```
 
 create a synonym for a remote table
 
+```
 create synonym hc_history_remote for dbaets.hc_history@etsdb;
+```
 
 Note: in a GG replication environment, if DDL replication is enabled, the create synonym over db link will cause process abending
 
@@ -186,9 +200,12 @@ debug.pkb - DEBUG package body
 debug_disable.pkb - run in production to bypass debug procedures
 
 
-### MISC
+## MISC
 
-Create a job
+### Create a job
+
+
+```
 
 begin
  DBMS_SCHEDULER.create_job (
@@ -203,8 +220,10 @@ begin
 end;
 /
 
-Enable or Disable a job
+```
+### Enable or Disable a job
 
+```
 execute dbms_scheduler.enable('MY_JOB_NAME');
 execute dbms_scheduler.disable('MY_JOB_NAME');
 Set attributes
@@ -216,12 +235,14 @@ begin
   );
 end;
 /
+```
 
-Display Jobs
+### Display Jobs
 
+```
 execute admin.print_table('select owner,job_name, job_action, state, next_run_date from dba_scheduler_jobs');
 
-execute admin.print_table('select job_name, job_action, state, next_run_date from user_scheduler_jobs');
+```
 
 ```
 

@@ -22,6 +22,9 @@ An example of using Ansible playbook to run script to set a profile limit for ea
 
 PL/SQL package for DBA to perform certain adminstrative tasks without logon to the server. 
 
+## ezpass
+A command line utility program developed by Golang to manage password, using
+Oracle database with label security feature as backend.
 
 ## COS-IBM
 
