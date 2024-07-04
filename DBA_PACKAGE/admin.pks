@@ -10,9 +10,9 @@ IS
   *    Define a package used to  perform various dba tasks
   *
   * NOTES
-  *    vdsi dba doesn't have privileges to read the data and they cannot
+  *    Some dbas don't have privileges to read the data and they cannot
   *    su - oracle either. This prevent them from performing certain admin
-  *    tasks. This package is thus developed to allow vdsi dba to perform
+  *    tasks. This package is thus developed to allow dbas to perform
   *    those tasks through some procedures.
   *
   *    Assume installing this pkg under DB_ADMIN, privleges are given

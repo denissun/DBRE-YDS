@@ -133,10 +133,10 @@ exit;
 -- for RAC 
 -- create directory and external table for each instance
 
-Create or replace directory alert_dir1 as '/opt/oracle/product/diag/rdbms/vvoprdtp/vvoprdtp1/trace';
-Create or replace directory alert_dir2 as '/opt/oracle/product/diag/rdbms/vvoprdtp/vvoprdtp2/trace';
-Create or replace directory alert_dir3 as '/opt/oracle/product/diag/rdbms/vvoprdtp/vvoprdtp3/trace';
-Create or replace directory alert_dir4 as '/opt/oracle/product/diag/rdbms/vvoprdtp/vvoprdtp4/trace';
+Create or replace directory alert_dir1 as '/opt/oracle/product/diag/rdbms/testdba/testdba1/trace';
+Create or replace directory alert_dir2 as '/opt/oracle/product/diag/rdbms/testdba/testdba2/trace';
+Create or replace directory alert_dir3 as '/opt/oracle/product/diag/rdbms/testdba/testdba3/trace';
+Create or replace directory alert_dir4 as '/opt/oracle/product/diag/rdbms/testdba/testdba4/trace';
 
 
 CREATE TABLE "ALERT_FILE1_EXT"
@@ -157,7 +157,7 @@ CREATE TABLE "ALERT_FILE1_EXT"
       )
     )
     LOCATION
-     ( 'alert_vvoprdtp1.log')
+     ( 'alert_testdba1.log')
   )
  REJECT LIMIT UNLIMITED
 /
@@ -180,7 +180,7 @@ CREATE TABLE "ALERT_FILE2_EXT"
       )
     )
     LOCATION
-     ( 'alert_vvoprdtp2.log')
+     ( 'alert_testdba2.log')
   )
  REJECT LIMIT UNLIMITED
 /

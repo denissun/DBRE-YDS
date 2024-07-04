@@ -22,8 +22,8 @@ CREATE or replace PACKAGE BODY ilogmon IS
        -- mask SCN -  SCN: 0x0e93.f872e608
        l_text := REGEXP_REPLACE(p_text, 'SCN: 0x[0-9a-z.]{13}', 'SCN: 0xaaaaaaaaaaaaa');
        -- mask path
-       -- +DATA_RTMV_CMSPFD/cmspfd/onlinelog/group_1.303.976792193
-       -- /opt/oracle/product/diag/rdbms/vvoprdsc/vvoprdsc1/trace/vvoprdsc1_ora_30865.trc
+       -- +DATA/testdb2/onlinelog/group_1.303.976792193
+       -- /opt/oracle/product/diag/rdbms/testdb/testdb1/trace/testdb1_ora_30865.trc
        --
        l_text := REGEXP_REPLACE(l_text,  '[/+](\S+/)+\S+\.\S+', '/path/to/filename');
        l_text := remove_digits(l_text);

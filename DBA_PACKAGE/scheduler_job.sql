@@ -161,7 +161,7 @@ end;
 * sameple jobs
 
 
-db_admin@vvoprdtp4_vvottpd4> exec admin.print_table('select job_name, job_action, enabled, instance_id from user_scheduler_jobs');
+db_admin@testserver_testdb> exec admin.print_table('select job_name, job_action, enabled, instance_id from user_scheduler_jobs');
 JOB_NAME                      : MONITOR_ALERT_FILE_INST_1
 JOB_ACTION                    : BEGIN db_admin.alert_file.monitor_alert_file('ALERT_FILE1_EXT', 'ALERT_DIR1'); END;
 ENABLED                       : TRUE

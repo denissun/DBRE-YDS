@@ -1,26 +1,26 @@
 # Overview
 
-Who can access which password?  This a problem that challenges us.
-
-There are various common functional user account passwords that DBAs have to know or manage. For example, those for RDS database master user account, Database Vault administer accounts, OEM sysman user, RMAN Catalog user account, monitoring user accounts, application user accounts, schema owners, and db code deployment user account etc. Sometimes, passwords may be not tied to a user, for examples TDE password, OEM agent registration password. It is obvious that not every DBA need to know every password. Onshore/offshore support model also adds some requirements,  such as offshore DBA should not access application data.
-
-Oracle Label Security (OLS) looks like a viable solution to the password management problem we face.  According to Oracle official document, OLS can achieve the followings:
-
-Enforce data access by security levels
-User access to data is controlled by defined data labels (restricted, sensitive, public). Hundreds of levels are supported.
-Users only see authorized data for their defined groups
-Use group labels to ensure users only access data relevant to their specific needs. Thousands of groups can be defined.
-Flexible security modeling
-Combine level and group labels to model almost any security policy, ensuring users only access appropriate data.
-
-EZPASS is a command line utility program developed by Gobang to help DBAs put and get passwords into and from Oracle database table  that is protected by OLS. In the following sections,  some details of the OLS and EZPASS program will be described.
-
+  Who can access which password?  This a problem that challenges us.
+  
+  There are various common functional user account passwords that DBAs have to know or manage. For example, those for RDS database master user account, Database Vault administer accounts, OEM sysman user, RMAN Catalog user account, monitoring user accounts, application user accounts, schema owners, and db code deployment user account etc. Sometimes, passwords may be not tied to a user, for examples TDE password, OEM agent registration password. It is obvious that not every DBA need to know every password. Onshore/offshore support model also adds some requirements,  such as offshore DBA should not access application data.
+  
+  Oracle Label Security (OLS) looks like a viable solution to the password management problem we face.  According to Oracle official document, OLS can achieve the followings:
+  
+  Enforce data access by security levels
+  User access to data is controlled by defined data labels (restricted, sensitive, public). Hundreds of levels are supported.
+  Users only see authorized data for their defined groups
+  Use group labels to ensure users only access data relevant to their specific needs. Thousands of groups can be defined.
+  Flexible security modeling
+  Combine level and group labels to model almost any security policy, ensuring users only access appropriate data.
+  
+  EZPASS is a command line utility program developed by Gobang to help DBAs put and get passwords into and from Oracle database table  that is protected by OLS. In the following sections,  some details of the OLS and EZPASS program will be described.
+  
 
 # Backend Database
 
 ## Schema
 
-In the EZPASS repository Oracle database, under schema EZPASS, there are four application tables
+  In the EZPASS repository Oracle database, under schema EZPASS, there are four application tables:
 
 ###  Table: SECRET_OBJECTS - storing encrypted password text and info related to the password
 
@@ -71,15 +71,16 @@ In the EZPASS repository Oracle database, under schema EZPASS, there are four ap
 
 ### Table: ACCESS_BY_KEY_LOG - logging the event of getting password by key
 
+```
  Name                               Null?    Type
  ---------------------------------- -------- ----------------------
  USERNAME                                    VARCHAR2(100) WORKDIR                                     VARCHAR2(200)
  HOSTNAME                                    VARCHAR2(100)
  STATUS                                      VARCHAR2(30)
  LOGTIME                                     TIMESTAMP(6)
+```
 
 ## The EZPASS repository Oracle database is Vault enabled and the tables are protected by realm
-
 
 ## Users must have accounts in the EZPASS Repo DB to use the program. 
    
@@ -87,9 +88,9 @@ Oracle standard role and privs are used to control who can access the tables und
 
 ## Row-Level Security is enforced with Oracle Label Security 
 
-   Currently each row of the tables is assigned with one of the three labels:  'C' (access_level=1), 'S' (access_level=2) or 'HS' (access_level =10) 
+  Currently each row of the tables is assigned with one of the three labels:  'C' (access_level=1), 'S' (access_level=2) or 'HS' (access_level =10) 
 
-    The following example shows 'USER1' is given access up to 'HS' labeled rows, whereas 'USER2' only can access up to  'S' labeled rows.
+  The following example shows 'USER1' is given access up to 'HS' labeled rows, whereas 'USER2' only can access up to  'S' labeled rows.
 
 ```
     BEGIN
@@ -119,7 +120,6 @@ https://docs.oracle.com/en/database/oracle/oracle-database/19/olsag/getting-star
 ##  Create a secret entry with "PUT"
 
 ```
-
 $> ezpass put -h
 Put password in repository with name, type, username and acccess_level info.
 

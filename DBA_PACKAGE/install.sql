@@ -49,24 +49,24 @@ set echo on
 
 grant execute on  db_admin.admin to dba;
 grant execute on  db_admin.admin to IPM_DB_DEPLOY; 
-grant execute on  db_admin.admin to VDSI_DBA_OPS_ROLE;
+grant execute on  db_admin.admin to TEAM_DBA_OPS_ROLE;
 
 
 grant execute on  db_admin.notification to dba;
 grant execute on  db_admin.notification to IPM_DB_DEPLOY; 
-grant execute on  db_admin.notification to VDSI_DBA_OPS_ROLE;
+grant execute on  db_admin.notification to TEAM_DBA_OPS_ROLE;
 
 grant execute on  db_admin.proactive to dba;
 grant execute on  db_admin.proactive to IPM_DB_DEPLOY; 
-grant execute on  db_admin.proactive to VDSI_DBA_OPS_ROLE;
+grant execute on  db_admin.proactive to TEAM_DBA_OPS_ROLE;
 
 grant execute on  db_admin.alert_file to dba;
 grant execute on  db_admin.alert_file to IPM_DB_DEPLOY; 
-grant execute on  db_admin.alert_file to VDSI_DBA_OPS_ROLE;
+grant execute on  db_admin.alert_file to TEAM_DBA_OPS_ROLE;
 
 grant execute on  db_admin.history to dba;
 grant execute on  db_admin.history to IPM_DB_DEPLOY; 
-grant execute on  db_admin.history to VDSI_DBA_OPS_ROLE;
+grant execute on  db_admin.history to TEAM_DBA_OPS_ROLE;
 
 grant execute on  db_admin.debug to PUBLIC;
 
