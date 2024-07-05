@@ -1,0 +1,1 @@
+https://oracle-study-notes.blogspot.com/2013/09/my-oracle-database-troubleshooting.html

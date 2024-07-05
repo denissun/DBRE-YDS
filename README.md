@@ -1,6 +1,6 @@
 # About DBRE_YDS repo 
 
-I am an expert Oracle DBA and proud of my database problem solving skills. I have been mindfulness in SRE/DBRE priciples and passionate in developing programing skills and applying software approaches to solve operational problems and chellenges.  
+I am an expert Oracle DBA and proud of my database problem solving skills. I have been mindfulness about SRE/DBRE principles and passionate in developing programing skills and applying software approaches to solve operational problems and chellenges.  
 
 This repo contains various projects, programs and scripts I developed from my DBA/SRE work or as results of learning-by-doing projects. 
 

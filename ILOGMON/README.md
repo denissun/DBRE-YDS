@@ -249,18 +249,18 @@ Example screenshots :
 
 ### Fig. 1 Recent messages
 
-![Alt text](/ILOGMON/img/ilogmon_1.png "fig 1")
+![Alt text](/ILOGMON/img/ilogmon_1a.png "fig 1")
 
 
 ### Fig. 2 action plans
 
-![Alt text](/ILOGMON/img/ilogmon_2.png "fig 2")
+![Alt text](/ILOGMON/img/ilogmon_2a.png "fig 2")
 
 
 
 ### Fig. 3 count and blackout notification info
 
-![Alt text](/ILOGMON/img/ilogmon_3.png "fig 3")
+![Alt text](/ILOGMON/img/ilogmon_3a.png "fig 3")
 
 ## Automatic notification blackout strategy based on the past occurrence of the event.
 
@@ -280,4 +280,4 @@ Example screenshots :
 An example alert email sent to dba team
 
 
-![Alt text](/ILOGMON/img/ilogmon_4.png "fig 4")
+![Alt text](/ILOGMON/img/ilogmon_4a.png "fig 4")

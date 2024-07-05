@@ -1,0 +1,27 @@
+stages:
+  - deploy
+
+default:
+  before_script:
+    - export NO_PROXY=example.com
+
+deploy:
+  stage:  deploy 
+  tags: 
+    - dbatask 
+  script:
+    - export CURRENT_DIR=`pwd` 
+    - echo "CURRENT_DIR=${CURRENT_DIR}" 
+    - cd ${CURRENT_DIR}/ets_gg_monitoring
+    - rm -rf /tmp/ets_gg_monitoring*.zip
+    - zip /tmp/ets_gg_monitoring.zip *.sh .dbpass
+    - cd ${CURRENT_DIR}/ets_gg_monitoring_sol
+    - zip /tmp/ets_gg_monitoring_sol.zip *.sh .dbpass
+    - cd ${CURRENT_DIR}
+    - ansible-playbook -i inventory_dir deploy_etsGGMonitoring.yml
+    - ansible-playbook -i inventory_dir deploy_etsGGMonitoring_sol.yml
+
+  only:
+    - master
+
+

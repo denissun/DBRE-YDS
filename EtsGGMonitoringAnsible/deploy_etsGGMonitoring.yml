@@ -1,0 +1,80 @@
+---
+- name: Ensure sample gg monitoring scripts are deployed to Linux gg hosts
+  gather_facts: false
+  hosts: gg_hosts 
+  remote_user: postgres 
+  vars:
+     target_path: "{{ps_output.stdout_lines[0] | replace('/dirprm/mgr.prm','') }}"
+
+  tasks:
+  - name: determine the target directory to deploy the script 
+    shell: 
+      cmd: ps -ef |  grep "dirprm/mgr.prm"  | grep -v grep | head -1 | awk '{print $10}' 
+    register: ps_output
+
+  - debug:
+      var: target_path
+
+  - block:
+      - name: check to see if there is GG MGR proccess at the target host
+        debug:
+           msg: No GG MGR process running at the target host at this time.
+      - meta: end_host
+    when: ps_output.stdout == ""
+
+
+  - name: Delete content & directory
+    file:
+      state: absent
+      path:  "{{target_path}}/ets_gg_monitoring" 
+
+  - name: create a directory
+    file:
+      path: "{{target_path}}/ets_gg_monitoring"
+      state: directory
+      mode: 0755
+
+  - name: delete remote zip file 
+    file: 
+      path: /tmp/ets_gg_monitoring.zip 
+      state: absent 
+
+  - name: copy the local zip file to remote server 
+    copy: 
+      src: /tmp/ets_gg_monitoring.zip 
+      dest: /tmp 
+      mode: '644'
+
+  - name: create a directory
+    file:
+      path: "{{target_path}}/ets_gg_monitoring/errlog"
+      state: directory
+      mode: 0755
+
+  - name: Unzip the zip file to the target diretory
+    unarchive:
+      src: /tmp/ets_gg_monitoring.zip
+      dest: "{{target_path}}/ets_gg_monitoring" 
+      remote_src: yes
+
+  - name: set up cron job for gg params
+    cron:
+      name: "ETS GG Monitoring - params"
+      hour: "{{ 24 | random }}"
+      minute: "{{ 60 | random }}" 
+      job: "{{target_path}}/ets_gg_monitoring/gg_params.sh > /tmp/gg_params.out 2>&1 " 
+      state: present
+
+  - name: set up cron job for gg agent script
+    cron:
+      name: "ETS GG Monitoring - agent"
+      minute: "*/5"
+      job: "{{target_path}}/ets_gg_monitoring/ets_gg_agent_5min.sh > /tmp/ets_gg_agent_5min.out 2>&1 " 
+      state: present
+
+  - name: set up cron job for verifying gg log
+    cron:
+      name: "ETS GG Monitoring - verify execution logs"
+      minute: "3,13,23,33,43,53"
+      job: "{{target_path}}/ets_gg_monitoring/gg_log_chk.sh > /tmp/gg_log_chk.out 2>&1 " 
+      state: present

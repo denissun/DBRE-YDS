@@ -1,0 +1,10 @@
+ETS_GG_MONITORING
+=================
+
+ETS_GG_MONITORING is a set of scripts which are used to monitor Oracle Goldendage and save the monitoring data in an repository database
+
+They deployed using Ansible from a control Server - tpalpghvvd002 and the working directory is /u01/postgres/dba/ansible/EtsGGMonitoringAnsible
+
+
+Reference:
+=========

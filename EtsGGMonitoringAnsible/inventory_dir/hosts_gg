@@ -1,0 +1,5 @@
+[gg_hosts]
+linuxhost1   ansible_user=gguser
+
+[gg_hosts_sol]
+solhost1
