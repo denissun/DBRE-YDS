@@ -1,0 +1,44 @@
+- name:  Oracle db account 180 days inactive  drop 
+  hosts: "{{ HOSTS }}"
+  collections:
+    - community.general.pbrun
+  gather_facts: false
+
+  tasks:
+  - name: create the path
+    file:
+      path: "/tmp/drop_user"
+      state:  directory
+
+  - name: copy the local script file to remote servers
+    copy:
+      src:  drop_user_180day_inactive.sh 
+      dest: "/tmp/drop_user"
+      mode: '755'
+
+  - name: copy the local sql file to remote servers
+    copy:
+      src:  drop_user_180day_inactive.sql 
+      dest: "/tmp/drop_user"
+
+
+  - name: run drop_user_180day_inactive.sh 
+    shell:
+      cmd: /tmp/drop_user/drop_user_180day_inactive.sh
+    ignore_errors: yes
+
+  - shell: (cd /tmp/drop_user; find . -name "*.log"  -o -name "*.spool" -type f) | cut -d'/' -f2
+    register: files_to_copy
+
+  - debug:
+      var:  files_to_copy
+
+  - fetch: src=/tmp/drop_user/{{ item }} dest=./logs
+    with_items: "{{ files_to_copy.stdout_lines }}"
+
+
+  - name: delete the path
+    file:
+       path: "/tmp/drop_user"
+       state: absent
+

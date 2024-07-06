@@ -1,0 +1,10 @@
+[all:vars]
+ansible_connection=ssh
+ansible_ssh_pass={{lookup('ansible.builtin.file', '~/.mypass')}}
+ansible_user=username1
+host_key_checking = False
+
+[hosts_ora]
+host1.example.com
+host2.example.com
+host3.example.com
