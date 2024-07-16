@@ -9,30 +9,40 @@ This repo is public sharable. I have made efforts as much as possible to hide or
 # Description of each folder (project)
 
 
-## [DBA_SCRIPTS](/DBA_SCRIPTS)
-
-Freqentely used DBA scripts for daily works  
-
 ## [config_inactive_account_time](config_inactive_account_time)
 
 An example of using Ansible playbook to run script to set a profile limit for each database from a central place
-
-## [DBA_PACKAGE](/DBA_PACKAGE)
-
-PL/SQL package for DBA to perform certain adminstrative tasks without logon to the server. 
-
-## [ezpass](/ezpass)
-A command line utility program developed by Golang to manage password, using
-Oracle database with label security feature as backend.
 
 ## [COS-IBM](/COS-IBM)
 
 Utility programes for interacting with IBM cloud object storage
 
+## [drop_user_180](/drop_user_180)
+
+Drop inactive human user accounts
+
+## [ezpass](/ezpass)
+A command line utility program developed by Golang to manage password, using
+Oracle database with label security feature as backend.
+
+
+## [DBA_PACKAGE](/DBA_PACKAGE)
+
+PL/SQL package for DBA to perform certain adminstrative tasks without logon to the server. 
+
+## [DBA_SCRIPTS](/DBA_SCRIPTS)
+
+Freqentely used DBA scripts for daily works  
+
+
 ## [ILOGMON](/ILOGMON)
 
 Intelligent Oracle Database Alert Log Monitoring Framework project. The framework is developed as an effort to make Oracle database alert log error messages easy to query, filter, and visualize.
 
-## [drop_user_180](/drop_user_180)
+## [INVENTORY_RDS_PYTHON](/INVENTORY_RDS_PYTHON)
 
-Drop inactive human user accounts
+Load AWS RDS instance data into a PostgreSQL DB table
+
+
+
+
