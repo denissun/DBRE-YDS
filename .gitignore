@@ -1,1 +1,7 @@
 .env
+File2Influx/target/**
+File2Influx/src/main/java/File2Influx/configuration/configuration/influx.properties
+File2Influx/src/data/**
+File2Influx/.classpath
+File2Influx/.project
+

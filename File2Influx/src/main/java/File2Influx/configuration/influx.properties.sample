@@ -1,0 +1,5 @@
+influxdb_url=http://test.example.com:8086
+token=eMZs8f1fL34bDwfJzOCdX_jZj ABCde7tNuEnXwYglA2HijkFGIE7o9YnNOH_fe6Iz_MC-NKUs35PpQBXFQ9bnQU9w==
+org=dbateam
+bucket=test_bucket
+tzcode=EST
