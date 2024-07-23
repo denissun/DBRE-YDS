@@ -19,7 +19,7 @@ Utility programes for interacting with IBM cloud object storage
 
 ## [drop_user_180](/drop_user_180)
 
-Drop inactive human user accounts
+Drop inactive human user accounts.
 
 ## [ezpass](/ezpass)
 A command line utility program developed by Golang to manage password, using
@@ -27,7 +27,7 @@ Oracle database with label security feature as backend.
 
 ## [File2Influx](/File2Influx)
 
-Java program to parsing various types of input files and load time series data into InfluxDB
+Java program to parse various types of input files and load time series data into InfluxDB.
 
 ## [DBA_PACKAGE](/DBA_PACKAGE)
 
@@ -35,7 +35,7 @@ PL/SQL package for DBA to perform certain adminstrative tasks without logon to t
 
 ## [DBA_SCRIPTS](/DBA_SCRIPTS)
 
-Freqentely used DBA scripts for daily works  
+Freqentely used DBA scripts for daily works.  
 
 
 ## [ILOGMON](/ILOGMON)
@@ -44,10 +44,12 @@ Intelligent Oracle Database Alert Log Monitoring Framework project. The framewor
 
 ## [INVENTORY_RDS_PYTHON](/INVENTORY_RDS_PYTHON)
 
-Load AWS RDS instance data into a PostgreSQL DB table
+Load AWS RDS instance data into a PostgreSQL DB table.
 
 
+## [ProcessDataFromExcel](/ProcessDataFromExcel)
 
+Example Python scripts using openpyxl library to process data from Excel file and generate summarized reports.
 
 
 

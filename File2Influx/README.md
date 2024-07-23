@@ -13,7 +13,7 @@ For the aforementioned purpose, I have developed a Java program called File2InFl
 
 # File2Influx 
 
-     A Java program Parsing various types of input files and load time series data into InfluxDB. I choose Java because we have Solaris databases servers. Other language such as Python, Golang are not suitable to run on Solaris platform. 
+     A Java program parsing various types of input files and load time series data into InfluxDB. I choose Java because we have Solaris databases servers. Other language such as Python, Golang are not suitable to run on Solaris platform. 
 
 
 ## Usage:
@@ -43,7 +43,7 @@ File2Influx : Load time series data from files to InfluxDB
 ```
 
 
-# InfluxDB example dashboards to visulize time series data
+# InfluxDB example dashboards to visualize time series data
 
 
 ## OS Watch data 
