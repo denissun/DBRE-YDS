@@ -1,0 +1,40 @@
+Table "instances" in the SRECDM repo oracle database has attributes: software_home, software_version and port.
+
+Table "swinstances"
+
+This directory contains scripts/programs to update software_home, software_version, port attributes of the instances
+
+Instance type
+
+ora    : Oracle db instance
+ogg    : GoldenGate
+gi     : Oracle GI
+sp     : SharePlex
+
+
+
+
+-- update Oracle database table 
+-- ./srecdmmgr instance update --sw_attr_by_file  -f $datafile
+
+-- update PostgreSQL database table
+./pgcdmmgr instance update --sw_attr_by_file  -f $datafile
+
+
+
+ansible-playbook with  "pbrun oracle"
+
+
+
+#####  FETCH  ######
+
+/u01/app/ets/autoinv_sshpass_pbrun/ansible_tasks/instance_sw_hv/ora_home_ver_fetch.sh hosts_fetch.cfg
+
+At remote hosts, under oracle user, a cron job should be set up to generate oracle home and version data file
+
+
+
+
+
+-rwxr-xr-x+ 1  Domain Users 12841601 May  1  2023 pgcdmmgr
+-rwxr-xr-x+ 1  Domain Users 12979624 May  1  2023 srecdmmgr

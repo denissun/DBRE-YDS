@@ -1,0 +1,28 @@
+- name:  get db information for ets inventory 
+  hosts: hosts_sol_dbinv 
+  gather_facts: false
+
+  tasks:
+  - name: create the path
+    file:
+      path: "/tmp/dbinv" 
+      state:  directory
+
+  - name: copy the local script file 1 to remote server
+    copy:
+      src:  get_sw_home_ver.sh
+      dest: "/tmp/dbinv" 
+      mode: '755'
+
+
+  - name: run get_sw_home_ver.sh script 
+    shell:
+      cmd: /tmp/dbinv/get_sw_home_ver.sh  /var/opt/oracle/oratab
+    ignore_errors: yes
+  
+
+  - name: fetch remote dat file
+    fetch:
+       src:  /tmp/dbinv/swhv_data.csv
+       dest: ./swhv/ 
+      

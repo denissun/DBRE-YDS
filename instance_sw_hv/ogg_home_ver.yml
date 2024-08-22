@@ -1,0 +1,33 @@
+- name:  update ogg instance home and version  and port
+  hosts: "{{ HOSTS }}"
+  gather_facts: false
+
+  tasks:
+  - name: create the path
+    file:
+      path: "/tmp/dbinv_gg" 
+      state:  directory
+
+  - name: copy the local script file 1 to remote server
+    copy:
+      src:  ogg_home_ver_get.sh
+      dest: "/tmp/dbinv_gg" 
+      mode: '755'
+
+
+  - name: run get_ogg_home_ver.sh script 
+    shell:
+      cmd: /tmp/dbinv_gg/ogg_home_ver_get.sh
+    ignore_errors: yes
+  
+
+  - name: fetch remote dat file
+    fetch:
+       src:  /tmp/dbinv_gg/ogg_swhv_data.csv
+       dest: ./swhv/ 
+
+#  - name: delete the path
+#    file:
+#      path: "/tmp/dbinv_gg" 
+#      state: absent 
+

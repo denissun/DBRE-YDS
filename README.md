@@ -29,6 +29,12 @@ Oracle database with label security feature as backend.
 
 Java program to parse various types of input files and load time series data into InfluxDB.
 
+
+## [DBAETS-PUB](https://github.com/denissun/DBAETS-PUB)
+
+Database Administration Event Tracking is a Python Flask web applicatin serving the purpose of database and server inventory, task tracking and knowlege sharing.
+
+
 ## [DBA_PACKAGE](/DBA_PACKAGE)
 
 PL/SQL package for DBA to perform certain adminstrative tasks without logon to the server. 
@@ -38,9 +44,14 @@ PL/SQL package for DBA to perform certain adminstrative tasks without logon to t
 Freqentely used DBA scripts for daily works.  
 
 
+
 ## [ILOGMON](/ILOGMON)
 
 Intelligent Oracle Database Alert Log Monitoring Framework project. The framework is developed as an effort to make Oracle database alert log error messages easy to query, filter, and visualize.
+
+## [instance_sw_hv](/instance_sw_hv)
+
+Get Oracle DB and GI instance software home and version for the DBAETS inventory system
 
 ## [INVENTORY_RDS_PYTHON](/INVENTORY_RDS_PYTHON)
 

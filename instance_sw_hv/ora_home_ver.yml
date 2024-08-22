@@ -1,0 +1,34 @@
+- name:  get oracle db instance  home and version and port 
+  hosts: "{{ HOSTS }}" 
+  collections:
+    - community.general.pbrun
+  gather_facts: false
+
+  tasks:
+  - name: create the path
+    file:
+      path: "/tmp/dbinv_ora" 
+      state:  directory
+
+  - name: copy the local script file to remote servers
+    copy:
+      src:  ora_home_ver_get.sh
+      dest: "/tmp/dbinv_ora" 
+      mode: '755'
+
+
+  - name: run ora_home_ver_get.sh script 
+    shell:
+      cmd: /tmp/dbinv_ora/ora_home_ver_get.sh
+    ignore_errors: yes
+  
+
+  - name: fetch remote dat file
+    fetch:
+       src:  /tmp/dbinv_ora/ora_swhv_data.csv
+       dest: ./swhv/ 
+
+#  - name: delete the path
+#    file:
+#      path: "/tmp/dbinv_ora" 
+#      state: absent 

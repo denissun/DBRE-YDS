@@ -1,0 +1,27 @@
+- hosts: all
+  gather_facts: no
+
+  vars:
+      ora_home: "{{ port }}"
+      command: "{{ command }}"
+      configfile : "{{ configfile }}"
+      email_out: "{{ email_out }}"
+
+  tasks:
+
+   - name: Copy the splex script to target host
+     copy : src=Shareplex_check_CSC.ksh dest=/tools/oracle/scripts/maint/bin/dbdeploy/Shareplex_check_CSC.ksh owner=oracle group=oinstall mode=755
+     become: true
+     become_user: root
+     become_method: pbrun
+    
+   
+   - name: Run the generate splex report shell script
+     become: true
+     become_user: root
+     become_method: pbrun
+     shell: 'su - oracle -c "/tools/oracle/scripts/maint/bin/dbdeploy/Shareplex_check_CSC.ksh {{ port }} {{ command }} {{ configfile }} {{ email_out }}"'
+     register: generate_splex
+
+   - name: Display generate_splex Out 
+     debug: var=generate_splex.stdout_lines
