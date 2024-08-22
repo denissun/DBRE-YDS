@@ -1,0 +1,11 @@
+server:
+  port: "5432"
+  name: "host2.example.com"
+
+database:
+  dbname: "etsdb"
+  dbuser: "etsdb_user"
+  dbpassword_encrypted: "ciNA35HzChcUCfUYaOM="
+
+
+

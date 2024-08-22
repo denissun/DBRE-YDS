@@ -1,0 +1,32 @@
+- name:  get SharePlex software home, version and port 
+  hosts: "{{ HOSTS }}" 
+  gather_facts: false
+
+  tasks:
+  - name: create the path
+    file:
+      path: "/tmp/dbinv_sp" 
+      state:  directory
+
+  - name: copy the local script file 1 to remote server
+    copy:
+      src:  sp_home_ver_get.sh
+      dest: "/tmp/dbinv_sp" 
+      mode: '755'
+
+
+  - name: run gi_home_ver_get.sh script 
+    shell:
+      cmd: /tmp/dbinv_sp/sp_home_ver_get.sh
+    ignore_errors: yes
+  
+
+  - name: fetch remote dat file
+    fetch:
+       src:  /tmp/dbinv_sp/sp_swhv_data.csv
+       dest: ./swhv/ 
+
+  - name: remove the path
+    file:
+       path: "/tmp/dbinv_sp" 
+       state: absent 

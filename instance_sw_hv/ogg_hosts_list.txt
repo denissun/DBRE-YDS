@@ -1,0 +1,12 @@
+dxafdpd1.example.com
+dxacspd2.example.com
+dxacspd6.example.com
+udffrdspd01.example.com
+udffrdspd01.example.com
+udfacaspd01.example.com
+udfacaspd02.example.com
+fdllpqvd002.example.com
+fdllpeld006.example.com
+fdllpxxvd010.example.com
+fdllpvvzd012.example.com
+
