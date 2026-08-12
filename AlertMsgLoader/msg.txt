@@ -1,0 +1,8 @@
+
+Tablespace Free And Used Analysis.
+
+MAIL Threshold Exceeded
+                                                                                  Lrgst
+Tablespace               Size       Free       Used      %Free  %Used  THRESHOLD  Chunk  Count
+------------------ ---------- ---------- ---------- ---------- ------ ---------- ------ ------
+IE10M_1                25,600      4,990     20,610         19     81         80  1,830      4

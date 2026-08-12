@@ -6,6 +6,14 @@ This repository serves as a testament to my ongoing journey in applying software
 
 # Description of each folder (project)
 
+## [AlertMsgLoader](/AlertMsgLoader)
+
+A lightweight Java utility that loads cron job alert messages into a centralized Oracle database table.
+
+## [APICallerAgent](/APICallerAgent)
+
+APICallerAgent – CLI agent powered by Gemini.
+
 ## [config_inactive_account_time](config_inactive_account_time)
 
 An example of using Ansible playbook to run script to set a profile limit for each database from a central place. Same methodology is adapted to various similar use cases.
@@ -66,7 +74,3 @@ Load AWS RDS instance data into a PostgreSQL DB table.
 
 Example Python scripts using openpyxl library to process data from Excel file and generate summarized reports.
 
-
-## [APICallerAgent](/APICallerAgent)
-
-APICallerAgent – CLI agent powered by Gemini.
