@@ -1,0 +1,43 @@
+1. This Agent will interact with Gemini API  model 
+
+# ---------------------------------------------------------------------------
+# Gemini API
+# ---------------------------------------------------------------------------
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+GEMINI_MODEL = "gemini-2.5-flash"
+
+2. This Agent will have only one tool:
+
+Api_Caller
+
+it will accept an api endpoint and json data, then invoke the api endpoint with the payload, using POST
+
+
+3. the Agent should be started with a playbook in md format, based on the playbook, the agent will
+   invoke API functions defined in the playbook to complete a task.
+   
+
+ python agent.py --playbook=oracle_db_query_playbook.md 
+ python agent.py --playbook=get_server_info_playbook.md 
+
+
+4.  An example playbook
+
+oracle_db_query_playbook.md 
+
+in this playbook define the endpoint and how agent should run a db query
+
+API: https://endpoint1.mycompany.com/damapi/api/v1/executeQuery
+
+method : post
+
+Reqest body
+
+{
+  "query": "string",
+  "dbNames": [
+    "string"
+  ],
+  "dsn": "string",
+  "rowLimit": 0
+}
