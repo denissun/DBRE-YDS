@@ -1,0 +1,28 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Config file (contains API keys and DB credentials)
+config.py
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Logs and export outputs
+logs/
+exports/
+*.log
+*.csv
+*.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
+set_gemini_api_key.bat
+set_env.ps1
+deploy.ps1

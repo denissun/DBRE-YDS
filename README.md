@@ -20,17 +20,19 @@ An example of using Ansible playbook to run script to set a profile limit for ea
 
 ## [COS-IBM](/COS-IBM)
 
-Utility programes for interacting with IBM cloud object storage
+Utility programes for interacting with IBM cloud object storage.
+
+## [DBExporterAI](/DBExporterAI)
+
+This is my learning project to understeand agentic AI workflow.
 
 ## [drop_user_180](/drop_user_180)
 
-Drop inactive human user accounts.
-
+Drop inactive human user accounts in all supported databases.
 
 ## [DBAETS-PUB](https://github.com/denissun/DBAETS-PUB)
 
-Database Administration Event Tracking is a Python Flask web applicatin serving the purpose of database and server inventory, task tracking and knowlege sharing.
-
+Database Administration Event Tracking is a Python Flask web applicatin serving the purpose of database and server inventory, task tracking and knowledge sharing.
 
 ## [DBA_PACKAGE](/DBA_PACKAGE)
 
@@ -39,7 +41,6 @@ PL/SQL package for DBA to perform certain adminstrative tasks without logon to t
 ## [DBA_SCRIPTS](/DBA_SCRIPTS)
 
 Freqentely used DBA scripts for daily works.  
-
 
 ## [EtsGGMonitoringAnsible](/EtsGGMonitoringAnsible)
 
