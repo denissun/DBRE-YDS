@@ -1,0 +1,11 @@
+server:
+  port: "5432"
+  name: "tpalpghvvd002.verizon.com"
+
+database:
+  dbname: "mydb"
+  dbuser: "myuser"
+  dbpassword_encrypted: "CiNA35HzxhcUCfUYaOM="
+
+
+
