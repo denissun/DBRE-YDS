@@ -1,10 +1,19 @@
-# About DBRE_YDS repo 
+# About DBRE-YDS repo 
 
 I am an expert Oracle DBA and very proud of my excellent database problem solving skills. I have been mindful about SRE/DBRE principles and passionate about leveraging programming and automation to enhance operational productivity and minimize manual intervention. This drive has led me to actively develop software-driven solutions that streamline routine tasks, improve monitoring capabilities, and proactively address potential problems.
 
 This repository serves as a testament to my ongoing journey in applying software engineering paradigms to database operations. It showcases a diverse collection of projects, programs, and scripts that I have meticulously crafted throughout my career as a DBA and SRE. Many of these tools were born out of practical necessity, designed to solve real-world challenges encountered in my daily work. Others are the direct result of my continuous "learning-by-doing" philosophy, reflecting my dedication to exploring new technologies and methodologies.
 
 # Description of each folder (project)
+
+
+## [AI_Engineer_Milestones](/AI_Engineer_Milestones)
+
+A collection of Python scripts exploring AI/LLM engineering concepts.
+
+## [aicodeagent](/aicodeagent)
+
+A Practise Project to undersand agentic AI work flow
 
 ## [AlertMsgLoader](/AlertMsgLoader)
 
