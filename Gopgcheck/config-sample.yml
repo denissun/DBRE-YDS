@@ -1,6 +1,6 @@
 server:
   port: "5432"
-  name: "tpalpghvvd002.verizon.com"
+  name: "sqblphiwwd001.mycompany.com"
 
 database:
   dbname: "mydb"

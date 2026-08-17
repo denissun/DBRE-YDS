@@ -1,0 +1,63 @@
+diagagent
+=========
+
+In windows PC dev env, should use Powershell
+
+- Activate in PS 
+
+PS C:\Users\dsun\Denis_files\python_proj\ai_apps\diagagent\venv\Scripts> .\Activate.ps1
+(venv) PS C:\Users\dsun\Denis_files\python_proj\ai_apps\diagagent\venv\Scripts>
+
+
+Create venv
+-----------
+
+
+1. create a directory
+   C:\Users\dsun\Denis_files\python_proj\ai_apps\diagagent
+
+2. Create venv
+
+   C:\Users\dsun\Python313\python.exe -m venv C:\Users\dsun\Denis_files\python_proj\ai_apps\diagagent\venv 
+
+
+
+
+resolve dependencies issue
+
+pip install --upgrade  langchain langchain-core langsmith langchain-community langchain-openai langchain-text-splitters --proxy=http://vzproxy.linuxhost1.com:80 
+
+
+(venv) PS C:\Users\dsun\Denis_files\python_proj\ai_apps\diagagent> streamlit run app.py
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://63.13.145.206:8501
+
+
+# mcp
+
+https://github.com/modelcontextprotocol/python-sdk?tab=readme-ov-file#installation
+
+
+# Python async def
+
+In Python, async def is used to define a coroutine function, which is a special type of function designed 
+for asynchronous programming. It's a fundamental part of Python's asyncio library, enabling concurrent execution 
+of I/O-bound operations without using traditional threads or processes.
+
+
+In essence, async def allows you to write functions that can "wait" for long-running operations 
+(like network requests or file I/O) without freezing the entire program, making your applications more 
+responsive and scalable, especially for I/O-bound tasks.
+
+
+# DB diagonostic architecture
+
+https://docs.google.com/presentation/d/1nYwVuCjlhZiV7QrxbND-fI12ZX8-52WPBjaz1OGINtQ/edit?slide=id.g383afd5219c_0_1078#slide=id.g383afd5219c_0_1078
+
+
+## Streamlit version
+
+streamlit run app_streamlit.py

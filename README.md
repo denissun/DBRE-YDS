@@ -35,6 +35,10 @@ Utility programes for interacting with IBM cloud object storage.
 
 This is my learning project to understeand agentic AI workflow.
 
+## [diagagent](/diagagent)
+
+An AI-powered **Oracle Database Performance Diagnostic Agent** powered by Google's Gemini LLM and LangGraph's ReAct framework.
+
 ## [drop_user_180](/drop_user_180)
 
 Drop inactive human user accounts in all supported databases.
@@ -83,6 +87,10 @@ Get Oracle DB and GI instance software home and version for the DBAETS inventory
 ## [INVENTORY_RDS_PYTHON](/INVENTORY_RDS_PYTHON)
 
 Load AWS RDS instance data into a PostgreSQL DB table.
+
+## [pgcheck](/pgcheck)
+
+A program to report various PostgreSQL database info for DBA developed using Python.
 
 ## [ProcessDataFromExcel](/ProcessDataFromExcel)
 

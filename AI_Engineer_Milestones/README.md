@@ -1,4 +1,4 @@
-# AI Engineering Milestones
+# AI Engineer Milestones
 
 A collection of Python scripts exploring AI/LLM engineering concepts and demonstrating embedding generation, vector storage, and semantic search workflows using Google's Gemini API and PostgreSQL pgvector extension.
 

@@ -1,0 +1,9 @@
+*.pyc
+*.ini
+log/
+sql/
+ini/
+build/
+pgcheck.spec
+sample.csv
+
